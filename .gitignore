@@ -1,0 +1,14 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.pdf
+*.toc
+*.out
+
+# Doxygen output
+html/
+latex/
+
+# OS files
+.DS_Store
+Thumbs.db
