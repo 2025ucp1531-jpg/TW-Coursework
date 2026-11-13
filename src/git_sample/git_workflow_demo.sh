@@ -1,20 +1,30 @@
 #!/bin/bash
-# Git and GitHub Command Demonstration Script
-# Based on course lecture slides
+# ==============================================================================
+# Script Name: workflow_script.sh
+# Description: Demonstrates complete Git and GitHub distributed version control workflow.
+# ==============================================================================
 
-echo "Initializing repository..."
+echo "=== 1. Initializing Local Git Repository ==="
 git init
 
-echo "Checking status..."
+echo "=== 2. Configuring Global Identity ==="
+git config --global user.name "Student Name"
+git config --global user.email "student@example.com"
+
+echo "=== 3. Inspecting Working Tree Status ==="
 git status
 
-echo "Staging files..."
+echo "=== 4. Staging Modified and Untracked Files ==="
 git add .
 
-echo "Committing changes..."
-git commit -m "Demo commit: implementing version control workflow"
+echo "=== 5. Committing Changes to Local History ==="
+git commit -m "Complete coursework update with exhaustive documentation and source samples"
 
-echo "Creating and switching to a feature branch..."
+echo "=== 6. Creating and Switching to Feature Branch ==="
 git switch -c feature-branch
 
-echo "Git workflow demo script completed."
+echo "=== 7. Linking Remote Repository and Publishing ==="
+git remote add origin https://github.com/2025ucp1531-jpg/TW-Coursework.git
+git push -u origin main
+
+echo "=== Git Workflow Execution Complete! ==="mo script completed."

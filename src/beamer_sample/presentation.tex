@@ -1,32 +1,62 @@
+% ==============================================================================
+% Presentation Title: Technical Writing Coursework Slide Deck
+% Theme: Madrid | Color Theme: Whale
+% ==============================================================================
+
 \documentclass{beamer}
 \usetheme{Madrid}
+\usecolortheme{whale}
 
-\title{Techniacal Writing with Latex}
-\author{Niharika Sharma}
+\title{Technical Writing & Presentation Architecture}
+\subtitle{Module 2: Beamer Slide Design & Color Theory}
+\author{Student Name}
+\institute{Department of Computer Science}
 \date{\today}
 
 \begin{document}
 
-\befin{frame}
-\maketitle
+% Title Slide
+\begin{frame}
+    \maketitle
 \end{frame}
 
-\begin{frame}{Outline}
-\begin{itemize}
-    \item Introduction to Latex
-    \item Document Classes
-    \item Version Control with Git
-\end{itemize}
+% Outline Frame
+\begin{frame}{Presentation Agenda}
+    \tableofcontents
 \end{frame}
 
-\begin{frame}{Why Latex?}
-begin{block}{Key Advantages}
-\begin{itemize}
-    \item Professionally designed layouts
-    \item Superior mathematical typesetting($E=mc^2$)
-    \item Portable and free structure
-\end{itemize}
-\end{blocl}
+\section{Design Principles}
+\begin{frame}{Core Presentation Design Principles}
+    \begin{block}{The 60-30-10 Color Rule}
+        \begin{itemize}
+            \item \textbf{60\% Dominant Tone}: Neutral background for eye comfort.
+            \item \textbf{30% Secondary Tone}: Structural headers and container blocks.
+            \item \textbf{10% Accent Tone}: High-impact highlights for critical takeaways.
+        \end{itemize}
+    \end{block}
+    
+    \begin{alertblock}{Important Contrast Warning}
+        Always maintain strict luminance contrast between text and background!
+    \end{alertblock}
+\end{frame}
+
+\section{Beamer Structure}
+\begin{frame}{Beamer Framework & Incremental Reveals}
+    \begin{exampleblock}{Sample Incremental List}
+        \begin{itemize}
+            <+->
+            \item \textbf{Frames}: Fundamental slide container units.
+            \item \textbf{Blocks}: Grouping concepts to reduce cognitive load.
+            \item \textbf{Overlays}: Controlling bullet appearance dynamically.
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Conclusion}
+    \centering
+    \Huge Thank You! \\
+    \vspace{0.5cm}
+    \normalsize Questions \& Discussion
 \end{frame}
 
 \end{document}
