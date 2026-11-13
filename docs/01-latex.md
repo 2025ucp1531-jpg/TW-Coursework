@@ -29,16 +29,16 @@ Packages extend LaTeX's native capabilities beyond basic text typesetting. They 
 
 amsmath, amssymb, amsfonts: Unlocks advanced mathematical environments, multi-line equation alignment structures, and standard academic math symbols.
 
-graphicx: Enables the inclusion of external raster and vector graphics files using the \includegraphics command.
+-->graphicx: Enables the inclusion of external raster and vector graphics files using the \includegraphics command.
 
-xcolor: Provides robust color management, allowing custom hex or RGB color definitions for text highlighting and background shading.
+-->xcolor: Provides robust color management, allowing custom hex or RGB color definitions for text highlighting and background shading.
 
-geometry: Allows precise programmatic control over page margins, header distances, and whitespace boundaries (e.g., \geometry{margin=1in}).
+-->geometry: Allows precise programmatic control over page margins, header distances, and whitespace boundaries (e.g., \geometry{margin=1in}).
 
-hyperref: Transforms internal cross-references, citations, and URLs into fully interactive, clickable hyperlinks within the compiled PDF.
+-->hyperref: Transforms internal cross-references, citations, and URLs into fully interactive, clickable hyperlinks within the compiled PDF.
 
 Code Example: Standard Preamble Setup
-Code snippet
+
 \documentclass{article}
 \usepackage{amsmath, amssymb, amsfonts} % Advanced math symbols
 \usepackage{graphicx}                 % External image inclusion
@@ -46,21 +46,25 @@ Code snippet
 \usepackage{geometry}                 % Page margin tuning
 \geometry{margin=1in}
 \usepackage{hyperref}                 % Interactive hyperlinks
+
+
 1.3 Front Matter, Title Generation, and Abstracts
+
+
 Metadata definitions prepare the title block and executive summary of your document before the body content begins.
 
-\title{Text}: Defines the primary title of the document.
+-->\title{Text}: Defines the primary title of the document.
 
-\author{Text}: Specifies the author's name, department, and institutional affiliation.
+-->\author{Text}: Specifies the author's name, department, and institutional affiliation.
 
-\date{Text}: Sets the publication date. Using \today automatically pulls the current system date upon compilation.
+-->\date{Text}: Sets the publication date. Using \today automatically pulls the current system date upon compilation.
 
-\maketitle: Renders the title, author, and date block at the top of the document according to the selected class style.
+-->\maketitle: Renders the title, author, and date block at the top of the document according to the selected class style.
 
-\begin{abstract} ... \end{abstract}: Generates a distinct, indented executive summary section positioned immediately below the title block.
+-->\begin{abstract} ... \end{abstract}: Generates a distinct, indented executive summary section positioned immediately below the title block.
 
 Code Example: Title and Abstract Block
-Code snippet
+
 \title{Introduction to Technical Writing}
 \author{Student Name \\ Department of Computer Science}
 \date{\today}
@@ -75,6 +79,7 @@ This document outlines foundational concepts in technical documentation, high-pr
 LaTeX organizes documents hierarchically to maintain logical structure and auto-generate navigation aids.
 
 Sectioning Commands
+
 \part{Title}: Highest-level structural division for massive documents.
 
 \chapter{Title}: Primary division for books and reports.
