@@ -1,54 +1,86 @@
-\# 5. Version Control with Git and GitHub
+# 5. Comprehensive Git & GitHub Version Control Manual
 
+---
 
+## 5.1 Distributed Architecture and Three-State Model
 
-\## Overview
+Git operates as a distributed version control system where every local repository contains the complete project history. Files cycle through three core states:
 
-\*\*Git\*\* is a distributed version control system tracking local history\[cite: 122, 123], while \*\*GitHub\*\* is an online platform for remote hosting and team collaboration\[cite: 151].
+1. **Working Directory**: The local folder where files are actively edited and modified.
+2. **Staging Area (`Index`)**: A temporary holding space where modified files are marked (`staged`) for inclusion in the next commit snapshot.
+3. **Local Repository (`HEAD`)**: Permanent storage containing committed snapshots of the project history.
 
+---
 
+## 5.2 Exhaustive Command Reference (Categorized)
 
-\## Complete Git Command Reference (From Course Slides)
+### A. Initialization and Configuration Commands
+* **`git init`**: Initializes a brand new hidden `.git` metadata repository in the current local folder.
+* **`git clone <repository_url>`**: Downloads a complete remote repository and its full commit history to your local machine.
+* **`git config --global user.name "Your Name"`**: Configures your global username attached to every local commit.
+* **`git config --global user.email "email@domain.com"`**: Configures your global email address for commit attribution.
 
-\* \*\*Initialization \& Configuration:\*\*
+### B. Basic Daily Workflow Commands
+* **`git status`**: Inspects the current state of the working directory, showing untracked files, modified files, and staged changes.
+* **`git add <file_name>`**: Stages a specific file, moving its changes from the working directory to the staging area.
+* **`git add .`**: Recursively stages all modified, new, and deleted files across the entire repository.
+* **`git commit -m "Descriptive message"`**: Captures all staged changes into a permanent snapshot stored in local history with an explanatory message.
 
-&#x20; \* `git init`\[cite: 132]
+### C. History Inspection and Diff Commands
+* **`git log`**: Displays a chronological history of all commits, including author hashes, dates, and commit messages.
+* **`git log --oneline`**: Displays a compressed, single-line summary graph of the repository commit history.
+* **`git diff`**: Displays exact line-by-line code modifications in your working directory that have not yet been staged.
+* **`git diff --staged`**: Inspects exact code changes currently sitting in the staging area awaiting commit.
+* **`git ls-files`**: Lists all files currently tracked and indexed by the Git repository.
 
-&#x20; \* `git clone <url>`\[cite: 160]
+### D. Branching and Merging Commands
+* **`git branch`**: Lists all local branches and highlights your currently active branch with an asterisk (`*`).
+* **`git branch <branch_name>`**: Creates a new local branch pointing to your current commit state without switching to it.
+* **`git switch -c <branch_name>`**: Creates a new branch and immediately switches your working directory to it.
+* **`git switch <branch_name>`**: Switches your active working environment to an existing branch.
+* **`git merge <branch_name>`**: Integrates historical changes from the specified branch into your currently active branch.
 
-&#x20; \* `git config --global user.name "Name"` / `user.email "email"`\[cite: 130]
+### E. Remote Synchronization Commands
+* **`git remote -v`**: Lists all linked remote repository URLs (such as `origin`) configured for fetch and push operations.
+* **`git push -u origin <branch_name>`**: Uploads your local commits to the remote GitHub repository and establishes an upstream tracking link.
+* **`git pull`**: Fetches all remote updates from GitHub and automatically merges them into your local working branch.
+* **`git fetch`**: Downloads remote commit history and updates remote tracking branches without altering your local working files.
 
-\* \*\*Basic Workflow:\*\*
+---
 
-&#x20; \* `git status`\[cite: 136]
+### Code Example: Automated Git Workflow Shell Script
+```bash
+#!/bin/bash
+# Complete Git and GitHub Workflow Demonstration
 
-&#x20; \* `git add <file>` / `git add .`\[cite: 137, 138]
+# 1. Initialize local repository
+git init
 
-&#x20; \* `git commit -m "Message"`\[cite: 139]
+# 2. Configure global user identity
+git config --global user.name "Student Name"
+git config --global user.email "student@example.com"
 
-\* \*\*Inspection \& History:\*\*
+# 3. Check working tree status
+git status
 
-&#x20; \* `git log` / `git log --oneline`\[cite: 140, 141]
+# 4. Stage all modified and untracked files
+git add .
 
-&#x20; \* `git diff` / `git diff --staged`\[cite: 142]
+# 5. Commit staged changes to local history
+git commit -m "Initial commit: adding project documentation and source files"
 
-&#x20; \* `git ls-files`\[cite: 143]
+# 6. Create and switch to a feature branch
+git switch -c feature-branch
 
-\* \*\*Branching \& Merging:\*\*
+# 7. Link remote repository and push changes
+git remote add origin [https://github.com/username/TW-Coursework.git](https://github.com/username/TW-Coursework.git)
+git push -u origin main
 
-&#x20; \* `git branch` / `git branch <name>`\[cite: 165]
+---
 
-&#x20; \* `git switch -c <name>` (or `checkout -b`)\[cite: 167]
-
-&#x20; \* `git switch <name>`\[cite: 166]
-
-&#x20; \* `git merge <branch>`\[cite: 168]
-
-\* \*\*Remotes \& Synchronization:\*\*
-
-&#x20; \* `git remote -v`\[cite: 158]
-
-&#x20; \* `git push -u origin <branch>`\[cite: 159]
-
-&#x20; \* `git pull` / `git fetch`\[cite: 161]
+### Final Steps to Push These Files:
+1. Open and save these contents into their respective files using Notepad:
+   ```bash
+   notepad docs/04-googledocs.md
+   notepad docs/05-git-github.md
 
