@@ -1,14 +1,85 @@
-\documentclass[12pt]{articles}
-\usepackage{amsmath}
+% ==============================================================================
+% Document Title: Comprehensive Technical Writing LaTeX Sample
+% Course: Technical Writing Coursework
+% Description: Demonstrates document classes, packages, math, tables, and floats.
+% ==============================================================================
 
-\title{Introduction to Teachnical Writing}
-\author{Niharika Sharma}
-date{\today}
+\documentclass[11pt, a4paper]{article}
+
+% Essential Preamble Packages
+\usepackage{amsmath, amssymb, amsfonts} % Advanced mathematical typesetting
+\usepackage{graphicx}                 % Image inclusion support
+\usepackage{xcolor}                   % Color management and custom highlights
+\usepackage{geometry}                 % Page margin tuning
+\geometry{margin=1in}
+\usepackage{hyperref}                 % Interactive hyperlinks in compiled PDFs
+
+% Document Metadata
+\title{Comprehensive Technical Writing Sample Document}
+\author{Student Name \\ Department of Computer Science}
+\date{\today}
 
 \begin{document}
+
 \maketitle
 
+\begin{abstract}
+This document serves as a comprehensive reference implementation demonstrating advanced LaTeX typesetting features, including custom preamble configurations, multi-line mathematical equations, matrices, tabular float structures, and coordinate-based picture graphics.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
 \section{Introduction}
-This document demonstrates basic Latex typesetting, including equations like $E=mc^2$.
+Welcome to the LaTeX technical reference sample. This file provides clean, compilable syntax structures for standard academic and technical reports.
+
+\subsection{Background and Motivation}
+Technical documentation requires strict typographic consistency. LaTeX automates structural layout, cross-referencing, and math formatting to ensure professional output.
+
+\section{Mathematical Typesetting (`amsmath`)}
+LaTeX provides unmatched precision for equations, supporting both inline expressions ($E = mc^2$) and prominent display environments.
+
+\begin{equation}
+    f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) \, e^{2\pi i \xi x} \, d\xi
+\end{equation}
+
+Furthermore, matrices and systems of equations are constructed cleanly using alignment arrays:
+\begin{equation}
+    A = \begin{bmatrix} 
+        1 & 2 & 3 \\ 
+        4 & 5 & 6 \\ 
+        7 & 8 & 9 
+    \end{bmatrix}
+\end{equation}
+
+\section{Tables and Figures (Floats)}
+Floats prevent awkward page breaks by letting LaTeX position tables and figures automatically where space permits.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|l|c|r|}
+        \hline
+        \textbf{Module} & \textbf{Primary Tool} & \textbf{Status} \\ \hline
+        Typesetting & LaTeX & Active \\ \hline
+        Presentations & Beamer & Active \\ \hline
+        Code Documentation & Doxygen & Active \\ \hline
+        Collaboration & Google Docs & Active \\ \hline
+        Version Control & Git / GitHub & Active \\ \hline
+    \end{tabular}
+    \caption{Summary of Course Modules and Primary Technical Tools}
+    \label{tab:modules}
+\end{table}
+
+\section{Coordinate-Based Picture Environment}
+Native vector graphics can be constructed using explicit Cartesian coordinate positioning:
+
+\begin{center}
+\begin{picture}(120,60)
+    \put(0,0){\framebox(120,60){}}
+    \put(20,30){\circle{20}}
+    \put(40,30){\vector(1,0){40}}
+    \put(90,25){Output}
+\end{picture}
+\end{center}
 
 \end{document}
